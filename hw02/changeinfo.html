@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+     <title></title>
+</head>
+
+    {% block body %}
+   
+        
+        <h3>변경할 비밀번호나 이름을 하세요</h3>
+        <form action="/changeinfo" method='POST'>
+        <input type='text' name='passwd' placeholder='Password' value="{{session['passwd']}}">
+        <input type="text" name='name' placeholder='Name' value="{{session['name']}}">
+        <input type="submit" value="변경">
+        </form>
+        
+        {% if msg==False %}
+            <script> alert("변경된 정보가 없습니다.") </script>
+        {% endif %}
+        
+   
+    
+    {% endblock %}
+</body>
+</html>

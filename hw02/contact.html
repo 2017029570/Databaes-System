@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<h3>
+안녕하세요 {{session['name']}} 구매자님 !
+</h3>
+{% if msg=="추가" %}
+    <script>
+        alert("연락처가 추가 되었습니다.")
+    </script>
+{% endif %}
+
+{% if msg=="삭제" %}
+    <script>
+        alert("연락처가 삭제 되었습니다.")
+    </script>
+{% endif %}
+
+{% if msg=="변경" %}
+    <script>alert("연락처가 변경 되었습니다.")</script>
+{% endif %}
+{% if check == True %}
+
+<li><a href='/add'>연락처 추가</a></li>
+<li><a href='/change'>연락처 변경</a></li>
+<li><a href='/delete'>연락처 삭제</a></li>
+    
+
+    <br>
+    <br>
+    <li>주소 목록</li>
+    <ul>
+        {% for n in contacts %}
+        <h5>{{n}}</h5> 
+        {% endfor %}
+    </ul>
+    
+{% endif %}
+
+{% if check==False %}
+    <h4>저장된 주소록이 없습니다.</h4>
+
+    <li><a href='/add'>연락처 추가</a></li>
+{% endif %}
+
+
+
+{% endblock %}

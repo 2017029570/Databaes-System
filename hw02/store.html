@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+
+{% if msg=="추가" %}
+    <script>
+        alert("메뉴가 추가 되었습니다.")
+    </script>
+{% endif %}
+
+{% if msg=="삭제" %}
+    <script>
+        alert("메뉴가 삭제 되었습니다.")
+    </script>
+{% endif %}
+
+{% if msg=="변경" %}
+    <script>alert("메뉴가 변경 되었습니다.")</script>
+{% endif %}
+<br>
+<li><a href='/menuadd'>메뉴 추가</a></li>
+<li><a href='/menuchange'>메뉴 변경</a></li>
+<li><a href='/menudelete'>메뉴 삭제</a></li>
+    
+
+    <br>
+    <br>
+    <li>가게 정보</li>
+    <ul>
+        <h/5>[STORE ID, STORE NAME, MENU]</h>
+        {% for n in store %}
+        <h5>{{n}}</h5> 
+        {% endfor %}
+    </ul>
+
+
+
+
+
+{% endblock %}

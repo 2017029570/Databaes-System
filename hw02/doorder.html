@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<h3>결제할 결제 수단을 선택하세요</h3>
+
+<!--<script>
+    function OK(value) {
+        alert(value);
+    }
+</script>-->
+
+
+<h1>결제수단</h1>
+<form action="/doorder" method = 'POST'>
+    <select name="payment">
+            <option value="" selected="selected">결제 수단</option>
+            {% for n in pay %}
+            <option value="{{n.data}}, type:{{n.type}}">{{n}}</option>
+            {% endfor %}
+            </select>
+
+<br>
+<br>
+<input type = 'submit' value='결제'>
+</form>
+
+{% endblock %}

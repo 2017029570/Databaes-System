@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<h3>변경할 결제수단을 선택하세요</h3>
+{% if msg==False %}
+    <script>
+        alert("결제수단이 없습니다.")
+    </script>
+{% endif %}
+<script type="text/javascript">
+    function func(value) {
+        if(value=="카드") {
+            alert(value);
+            document.getElementById("card").style.display="block";
+            document.getElementById("bank").style.display="none";
+        }
+        else if(value=="계좌") {
+            alert(value)
+            document.getElementById("bank").style = "block";
+            document.getElementById("card").style.display="none";
+        }
+    }
+</script>
+
+<form action="/paychange" method = 'POST'>
+    <select id="paytype" name="paytype" onChange="func(this.value)">
+        <option value="" selected="selected">수단</option>
+        <option value="카드">카드</option>
+        <option value="계좌">계좌</option>
+    </select>
+    <br>
+    <div id="card" style="display:none;">
+        <input type='text' name='old' placeholder="Old Card Number">
+        <input type='text' name='new' placeholder="New Card Number">
+    </div>
+    <div id="bank" style="display:none;">
+        <input type='text' name='bankname' placeholder="Bank Name">
+        <input type='text' name='bold' placeholder="Old Account">
+        <input typue='text' name='bnew' placeholder="New Account">
+    </div>
+
+<br>
+<input type = 'submit' value='변경'>
+</form>
+
+{% endblock %}

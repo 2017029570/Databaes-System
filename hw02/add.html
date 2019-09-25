@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<h3>추가할 연락처를 입력하세요</h3>
+{% if msg==False %}
+    <script>
+        alert("연락처가 이미 있습니다.")
+    </script>
+{% endif %}
+
+<h1>연락처</h1>
+<form action="/add" method = 'POST'>
+<input type = 'text' name='number' placeholder="Phone number">
+<br>
+<input type = 'submit' value='추가'>
+</form>
+
+{% endblock %}

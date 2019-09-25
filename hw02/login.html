@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<hi>로그인</hi>
+
+<form action='/login' method='post'>
+    <input type='text' name='sid' placeholder="ID">
+    <intput type='password' name='passwd' placeholder="PASSWORD">
+    <input type='submit' value='로그인'>
+</form>
+
+{% endblock %}

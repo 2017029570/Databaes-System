@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<h3>
+안녕하세요 {{session['name']}} 판매자님 !
+</h3>
+{% if msg==True %}
+    <script>alert("변경되었습니다.")</script>
+{% endif %}
+<br>
+<li>
+    <a href='/store'>소유 가게 목록</a>
+</li>
+</br>
+
+
+{% endblock %}

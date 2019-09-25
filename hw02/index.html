@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+안녕하세요 배달의 한양입니다.
+
+{% if msg==False %}
+<script>alert("로그인 정보가 틀렸습니다")</script>
+{% endif %}
+<h1>Login</h1>
+<form action="/login" method = 'POST'>
+<input type = 'email' name='sid' placeholder="Email">
+<br>
+<input type = 'password' name='passwd' placeholder="Password">
+<input type = 'submit' value='로그인'>
+</form>
+
+{% endblock %}

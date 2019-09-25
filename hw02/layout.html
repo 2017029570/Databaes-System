@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+     <title>배달의 한양입니다!{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div>
+        {% if session['sid'] == None %}
+           <h3>로그인 하세요</h3>
+        {% endif %}
+
+        {% if session['sid'] != None %}
+            <a href='/logout'>로그아웃</a>
+            <a href='/changeinfo'>정보변경</a>
+            
+        {% endif %}
+    </div>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>

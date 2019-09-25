@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+{% if type=="delivery" %}
+    <h3>안녕하세요 {{name}} 배달부님!</h3>
+
+<h1>주문 내역</h1>
+{% for n in orderlist %}
+<h4>{{n}}</h4>
+{% for j in orderlist[n] %}
+<h4>{{j}}</h4>
+{% endfor %}
+{% endfor %}
+
+{% if orderlist=={} %}
+<h4>주문 내역이 없습니다.</h4>
+{% endif %}
+{% endif %}
+
+{% if type!="delivery" %}
+{% for i in orderlist %}
+<h4>{{i}}</h4>
+{% endfor %}
+{% endif %}
+
+
+{% endblock %}

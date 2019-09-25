@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+
+{% if msg=="추가" %}
+    <script>
+        alert("결제수단이 추가 되었습니다.")
+    </script>
+{% endif %}
+
+{% if msg=="삭제" %}
+    <script>
+        alert("결제수단이 삭제 되었습니다.")
+    </script>
+{% endif %}
+
+{% if msg=="변경" %}
+    <script>alert("결제수단이 변경 되었습니다.")</script>
+{% endif %}
+<br>
+<li><a href='/payadd'>결제수단 추가</a></li>
+<li><a href='/paychange'>결제수단 변경</a></li>
+<li><a href='/paydelete'>결제수단 삭제</a></li>
+    
+
+    <br>
+    <br>
+    <li>결제수단 정보</li>
+    <ul>
+        {% for n in pay %}
+        <h5>{{n}}</h5> 
+        {% endfor %}
+    </ul>
+
+
+
+
+
+{% endblock %}

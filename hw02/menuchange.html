@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<h3>변경할 메뉴를 입력하세요</h3>
+{% if msg==False %}
+    <script>
+        alert("메뉴가 없습니다.")
+    </script>
+{% endif %}
+
+<h1>메뉴</h1>
+<form action="/menuchange" method = 'POST'>
+<input type='text' name='store' placeholder="Store ID">
+<input type = 'text' name='old' placeholder="Old Menu">
+<input type = 'text' name='new' placeholder="New Menu">
+<br>
+<input type = 'submit' value='변경'>
+</form>
+
+{% endblock %}
